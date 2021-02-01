@@ -1,13 +1,19 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-import "./index.css";
-import "./index.scss";
-import "font-awesome/css/font-awesome.min.css";
-ReactDom.render(
-  <h1>
-    <i className="fa fa-bandcamp"></i>
-    Hello,React22222
-  </h1>,
-  document.querySelector("#app")
-);
+import { Router as BrowserRouter, Link, Switch } from "react-router-dom";
+
+import Layout from "Component/layout/index.jsx";
+import Home from "Page/home/index.jsx";
+
+class App extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <Home />
+      </Layout>
+    );
+  }
+}
+
+ReactDom.render(<App />, document.querySelector("#app"));
