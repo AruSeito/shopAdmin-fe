@@ -7,8 +7,8 @@ module.exports = {
   entry: './src/app.jsx',
   resolve: {
     alias: {
-      page: path.resolve(__dirname, 'src/pages'),
-      component: path.resolve(__dirname, 'src/component')
+      Page: path.resolve(__dirname, 'src/page'),
+      Component: path.resolve(__dirname, 'src/component')
     }
   },
   output: {
