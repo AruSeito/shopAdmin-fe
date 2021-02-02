@@ -74,10 +74,16 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
       filename: 'js/base.js'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    port: 18080
+    hot: true,
+    inline: true,
+    port: 18080,
+    historyApiFallback: {
+      index: '/dist/index.html'
+    },
   }
 };
