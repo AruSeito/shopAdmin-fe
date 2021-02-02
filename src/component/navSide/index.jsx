@@ -1,86 +1,64 @@
 import React from "react";
+
+import { Link, NavLink } from "react-router-dom";
 class NavSide extends React.Component {
   render() {
     return (
-      <div className="navbar-default navbar-side" role="navigation">
+      <div className="navbar-default navbar-side">
         <div className="sidebar-collapse">
           <ul className="nav" id="main-menu">
             <li>
-              <a className="active-menu" href="index.html" one-link-mark="yes">
-                <i className="fa fa-dashboard"></i> Dashboard
-              </a>
+              <NavLink exact activeClassName="active-menu" to="/">
+                <i className="fa fa-dashboard"></i>
+                <span>Dashboard</span>
+              </NavLink>
             </li>
-            <li>
-              <a href="ui-elements.html" one-link-mark="yes">
-                <i className="fa fa-desktop"></i> UI Elements
-              </a>
-            </li>
-            <li>
-              <a href="chart.html" one-link-mark="yes">
-                <i className="fa fa-bar-chart-o"></i> Charts
-              </a>
-            </li>
-            <li>
-              <a href="tab-panel.html" one-link-mark="yes">
-                <i className="fa fa-qrcode"></i> Tabs &amp; Panels
-              </a>
-            </li>
-
-            <li>
-              <a href="table.html" one-link-mark="yes">
-                <i className="fa fa-table"></i> Responsive Tables
-              </a>
-            </li>
-            <li>
-              <a href="form.html" one-link-mark="yes">
-                <i className="fa fa-edit"></i> Forms{" "}
-              </a>
-            </li>
-
-            <li>
-              <a href="#" one-link-mark="yes">
-                <i className="fa fa-sitemap"></i> Multi-Level Dropdown
+            <li className="active">
+              <Link to="/product">
+                <i className="fa fa-sitemap"></i>
+                <span>product</span>
                 <span className="fa arrow"></span>
-              </a>
-              <ul className="nav nav-second-level collapse">
+              </Link>
+              <ul className="nav nav-second-level collapse in">
                 <li>
-                  <a href="#" one-link-mark="yes">
-                    Second Level Link
-                  </a>
+                  <NavLink activeClassName="active-menu" to="/product">
+                    Product management
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="#" one-link-mark="yes">
-                    Second Level Link
-                  </a>
-                </li>
-                <li>
-                  <a href="#" one-link-mark="yes">
-                    Second Level Link<span className="fa arrow"></span>
-                  </a>
-                  <ul className="nav nav-third-level collapse">
-                    <li>
-                      <a href="#" one-link-mark="yes">
-                        Third Level Link
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" one-link-mark="yes">
-                        Third Level Link
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" one-link-mark="yes">
-                        Third Level Link
-                      </a>
-                    </li>
-                  </ul>
+                  <NavLink activeClassName="active-menu" to="/category">
+                    Category management
+                  </NavLink>
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="empty.html" one-link-mark="yes">
-                <i className="fa fa-fw fa-file"></i> Empty Page
-              </a>
+            <li className="active">
+              <Link to="/order">
+                <i className="fa fa-sitemap"></i>
+                <span>Order</span>
+                <span className="fa arrow"></span>
+              </Link>
+              <ul className="nav nav-second-level collapse in">
+                <li>
+                  <NavLink activeClassName="active-menu" to="/order">
+                    Order management
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+            <li className="active">
+              <Link to="/user">
+                <i className="fa fa-sitemap"></i>
+                <span>User</span>
+                <span className="fa arrow"></span>
+              </Link>
+              <ul className="nav nav-second-level collapse in">
+                <li>
+                  <NavLink activeClassName="active-menu" to="/user">
+                    User management
+                  </NavLink>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
