@@ -10,8 +10,8 @@ class Layout extends React.Component {
   render() {
     return (
       <div id="wrapper">
-        <NavSide />
         <NavTop />
+        <NavSide />
         {this.props.children}
       </div>
     );
