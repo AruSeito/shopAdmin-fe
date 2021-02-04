@@ -8,7 +8,9 @@ module.exports = {
   resolve: {
     alias: {
       Page: path.resolve(__dirname, 'src/page'),
-      Component: path.resolve(__dirname, 'src/component')
+      Component: path.resolve(__dirname, 'src/component'),
+      Util: path.resolve(__dirname, 'src/util'),
+      Service: path.resolve(__dirname, 'src/service')
     }
   },
   output: {
@@ -85,5 +87,11 @@ module.exports = {
     historyApiFallback: {
       index: '/dist/index.html'
     },
+    proxy: {
+      '/manage': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      }
+    }
   }
 };
