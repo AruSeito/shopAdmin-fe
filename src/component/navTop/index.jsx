@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class NavTop extends React.Component {
-  clickLogout() {
+  handleClickLogout() {
     console.log("event start");
   }
   render() {
@@ -24,7 +24,7 @@ class NavTop extends React.Component {
             <ul className="dropdown-menu dropdown-user">
               <li
                 onClick={() => {
-                  this.clickLogout();
+                  this.handleClickLogout();
                 }}
               >
                 <a href="javascript:;">

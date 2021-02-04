@@ -5,20 +5,29 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Layout from "Component/layout/index.jsx";
 import Home from "Page/home/index.jsx";
+import Login from "Page/login/index.jsx";
 
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/product" component={Home} />
-            <Route exact path="/category" component={Home} />
-            <Route exact path="/order" component={Home} />
-            <Route exact path="/user" component={Home} />
-          </Switch>
-        </Layout>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route
+            path="/"
+            render={(props) => (
+              <Layout>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/product" component={Home} />
+                  <Route path="/category" component={Home} />
+                  <Route path="/order" component={Home} />
+                  <Route path="/user" component={Home} />
+                </Switch>
+              </Layout>
+            )}
+          />
+        </Switch>
       </Router>
     );
   }
