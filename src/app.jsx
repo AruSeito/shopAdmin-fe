@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "Component/layout/index.jsx";
 import Home from "Page/home/index.jsx";
 import Login from "Page/login/index.jsx";
+import Error from "Page/error/index.jsx";
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component {
                   <Route path="/category" component={Home} />
                   <Route path="/order" component={Home} />
                   <Route path="/user" component={Home} />
+                  <Route component={Error} />
                 </Switch>
               </Layout>
             )}
