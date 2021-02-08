@@ -6,3 +6,10 @@ export function userLogin(loginInfo) {
     data: loginInfo,
   });
 }
+
+export function userLogout() {
+  return request({
+    url: "/user/logout.do",
+    type: "POST",
+  });
+}

@@ -16,7 +16,7 @@ class App extends React.Component {
           <Route
             path="/"
             render={(props) => (
-              <Layout>
+              <Layout {...props}>
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/product" component={Home} />

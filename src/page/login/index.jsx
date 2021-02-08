@@ -27,6 +27,7 @@ class Login extends React.Component {
     };
     userLogin(loginInfo).then(
       (res) => {
+        window.localStorage.setItem("userInfo", JSON.stringify(res));
         this.props.history.push(this.state.redirect);
       },
       (errMsg) => {

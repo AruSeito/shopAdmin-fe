@@ -1,11 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { userLogout } from "Service/user.jsx";
 
 class NavTop extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: window.localStorage.getItem("userInfo") || "",
+    };
+  }
+
   handleClickLogout() {
-    console.log("event start");
+    userLogout().then(() => {
+      window.localStorage.removeItem("userInfo");
+      this.props.history.push("/login");
+    });
   }
   render() {
+    const { userInfo } = this.state;
     return (
       <div className="navbar navbar-default top-navbar">
         <div className="navbar-header">
@@ -18,7 +30,12 @@ class NavTop extends React.Component {
           <li className="dropdown">
             <a className="dropdown-toggle" href="javascript:;">
               <i className="fa fa-user fa-fw"></i>
-              <span> Welcome,admin</span>
+              {userInfo ? (
+                <span> Welcome,{JSON.parse(userInfo).username}</span>
+              ) : (
+                <span> Welcome</span>
+              )}
+
               <i className="fa fa-caret-down"></i>
             </a>
             <ul className="dropdown-menu dropdown-user">
